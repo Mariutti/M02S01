@@ -1,12 +1,13 @@
 package semana01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercicio {
     public static void main(String[] args) {
         ArrayList<String> alunos = new ArrayList<>();
-        double[] notas = new double[3];
+        ArrayList<double[]> boletim = new ArrayList<>();
         boolean continuar = true;
 
         while (continuar){
@@ -17,10 +18,12 @@ public class Exercicio {
                 continuar = false;
             }else {
                 alunos.add(aluno);
-            }
-            for(int i = 0; i < 3; i++) {
-                System.out.println("Digite a " + i + " nota: ");
-                notas[i] = entrada.nextInt();
+                double[] notas = new double[3];
+                for(int i = 0; i < 3; i++) {
+                    System.out.println("Digite a " + (i+1) + "ª nota: ");
+                    notas[i] = entrada.nextDouble();
+                }
+                boletim.add(notas);
             }
         }
         System.out.println(alunos.toString());
@@ -29,7 +32,6 @@ public class Exercicio {
 }
 
 
-//    TODO 6 - Ainda dentro do laço de repetição while receba agora 3 notas e armazene em Array ( Vetor ) de 3 posições
 
 //    TODO 7 - Faça uma alteração para armazenar agora esse vetor em um ArrayList
 
