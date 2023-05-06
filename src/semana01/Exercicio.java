@@ -25,15 +25,16 @@ public class Exercicio {
                 }
                 boletim.add(notas);
             }
+
         }
-        System.out.println(alunos.toString());
-        System.out.println("Fim da aplicação.");
+        for (String aluno: alunos) {
+            int index = alunos.indexOf(aluno);
+            System.out.printf("Aluno(a) %s.\n", aluno);
+            System.out.printf("Notas: %s.\n", Arrays.toString(boletim.get(index)));
+
+        }
     }
 }
-
-
-
-//    TODO 7 - Faça uma alteração para armazenar agora esse vetor em um ArrayList
 
 //    TODO 8 - Quando então digitado FIM, deverá exibir então a lista de alunos e suas notas
 
