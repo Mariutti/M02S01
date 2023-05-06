@@ -6,12 +6,13 @@ import java.util.Scanner;
 
 public class Exercicio {
     public static void main(String[] args) {
-        ArrayList<String> alunos = new ArrayList<>();
+        ArrayList<String> alunos = new ArrayList<>(); //ArrayList com os alunos do loop while
         ArrayList<double[]> boletim = new ArrayList<>();
         ArrayList<ArrayList<String>> aprovados = new ArrayList<>();
         ArrayList<ArrayList<String>> rerovados = new ArrayList<>();
         boolean continuar = true;
 
+        //loop while para perguntar o nome do aluno e as notas, enquanto não for escrito "fim"
         while (continuar){
             System.out.println("Digite o nome do aluno ou FIM para sair do programa: ");
             Scanner entrada = new Scanner(System.in);
@@ -21,18 +22,23 @@ public class Exercicio {
             }else {
                 alunos.add(aluno);
                 double[] notas = new double[3];
+                //loop for com 3 iterações para preencher o Array com 3 notas
                 for(int i = 0; i < 3; i++) {
                     System.out.println("Digite a " + (i+1) + "ª nota: ");
                     notas[i] = entrada.nextDouble();
                 }
+                //notas são adicionadas ao Array de 3 posições - boletim
                 boletim.add(notas);
             }
 
         }
+        //loop do tipo forEach para cada aluno da lista criada no loop wile
         for (String aluno: alunos) {
             int index = alunos.indexOf(aluno);
-            ArrayList<String> resultadoAluno = new ArrayList<>();
+            ArrayList<String> resultadoAluno = new ArrayList<>(); //ArrayList criado para guardar as informações do
+            // aluno (nome e notas)
             double somaNotas = 0;
+            // loop do tipo forEach, para iterar em cada nota do boletim, par o somatório das notas de um aluno
             for (double nota: boletim.get(index)
                  ) {
                 somaNotas += nota;
