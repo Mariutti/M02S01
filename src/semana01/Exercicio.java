@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Exercicio {
     public static void main(String[] args) {
         ArrayList<String> alunos = new ArrayList<>();
-        int[] notas = new int[3];
+        double[] notas = new double[3];
         boolean continuar = true;
 
         while (continuar){
